@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+	<!-- jQuery  -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+파이어베이스 웹서버 입니다.
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!--<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>-->
+
+<script>
+  
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCBjMo-7Cc26a_oSxEYnIjf23hwQ0N98CU",
+    authDomain: "test-74b4b.firebaseapp.com",
+    databaseURL: "https://test-74b4b.firebaseio.com",
+    projectId: "test-74b4b",
+    storageBucket: "test-74b4b.appspot.com",
+    //messagingSenderId: "727369431113",
+    //appId: "1:727369431113:web:adc258c90723f4c3b26798",
+    measurementId: "G-VNRG1RYQZ1"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+
+  // var database = firebase.database().ref('test/');
+  // database.set({"name" : "테스트", "intro":"인삿말"});
+  // database.ref('test/').set({"name" : "테스트", "intro":"인삿말"});
+  
+  function writeTestData(name, intro) {
+    firebase.database().ref('/test/').push({
+      name : name,
+      intro : intro
+    });
+  };
+
+  writeTestData("이슬", "seulee95@gmail.com");
+//  writeTestData("조민정", "minjung01@gmail.com");
+
+
+  // 구글 인증 기능 추가
+  var provider = new firebase.auth.GoogleAuthProvider();
+
+  // 인증하기
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    
+    console.log(user)		// 인증 후 어떤 데이터를 받아오는지 확인해보기 위함.
+  // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+</script>
+
+</body>
+</html>

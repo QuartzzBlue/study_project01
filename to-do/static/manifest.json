@@ -1,6 +1,6 @@
 {
-  "name": "to-do-frontend",
-  "short_name": "to-do-frontend",
+  "name": "to-do",
+  "short_name": "to-do",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",

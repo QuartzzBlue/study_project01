@@ -1,13 +1,13 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyAbirE-nI5_0Vchqz6sJpjzQaED33uoM54",
-    authDomain: "study-946bb.firebaseapp.com",
-    databaseURL: "https://study-946bb.firebaseio.com",
-    projectId: "study-946bb",
-    storageBucket: "study-946bb.appspot.com",
-    messagingSenderId: "262608052759",
-    appId: "1:262608052759:web:3d0e90975cba375ab43252",
-    measurementId: "G-MQKHHZ2LKF"
-};
+    apiKey: "AIzaSyAUz7HVJ9Q8FULMOdF2SV__wvlZGijM7lg",
+    authDomain: "dashboard-mc-22f56.firebaseapp.com",
+    databaseURL: "https://dashboard-mc-22f56.firebaseio.com",
+    projectId: "dashboard-mc-22f56",
+    storageBucket: "dashboard-mc-22f56.appspot.com",
+    messagingSenderId: "408470441361",
+    appId: "1:408470441361:web:f122406538edad8db51e30",
+    measurementId: "G-JHXYT2P52W"
+  };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig); 

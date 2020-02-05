@@ -1,4 +1,4 @@
-# to-do-frontend
+# to-do
 
 > A Vue.js project
 

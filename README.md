@@ -1,2 +1,2 @@
-# study_project01
+# study_project
 First study project in Multicampus
